@@ -1,3 +1,7 @@
-# Boilerplate Meteor Project
+# Notes App
 
-This includes a basic react and auth setup.
+An app to save notes.
+
+To run tests use: npm test
+
+To run the webapp use: meteor

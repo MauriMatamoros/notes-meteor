@@ -8,6 +8,7 @@ export const NoteListItem = (props) => {
     return (
         <div onClick={() => props.Session.set('selectedNoteId', props.note._id) }>
             <h5>{ props.note.title || 'Untitled note'}</h5>
+            { props.note.selected ? 'selected' : undefined }
             <p>{ moment(props.note.updateAt).format('YY/M/DD') }</p>
         </div>
     );

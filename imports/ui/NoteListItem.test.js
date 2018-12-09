@@ -2,6 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import expect from 'expect';
 import { mount } from 'enzyme';
+import moment from 'moment';
 
 import { NoteListItem } from './NoteListItem';
 import { notes } from '../fixtures/fixtures';
@@ -19,7 +20,7 @@ if (Meteor.isClient) {
         it('should render title and timestamp', () => {
             const wrapper = mount(<NoteListItem note={notes[0]} Session={Session} />);
             expect(wrapper.find('h5').text()).toBe(notes[0].title);
-            expect(wrapper.find('p').text()).toBe('18/12/07');
+            expect(wrapper.find('p').text()).toBe(moment().format('YY/M/DD'));
         });
 
         it('should set default title if no title set', () => {
